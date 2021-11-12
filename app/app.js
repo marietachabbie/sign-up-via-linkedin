@@ -1,14 +1,12 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var livereload = require("livereload");
-var connectLiveReload = require("connect-livereload");
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const livereload = require("livereload");
+const connectLiveReload = require("connect-livereload");
+const MongoDbConnection = require('./models/MongoDbConnection');
 
-
-var indexRouter = require('./routes');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes');
 
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
@@ -17,7 +15,7 @@ liveReloadServer.server.once("connection", () => {
   }, 100);
 });
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,13 +28,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+const main = () => {
+  MongoDbConnection.init()
+  .then(() => app.use('/', indexRouter))
+  .catch (error => output(error));
+}
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+main()
 
 // error handler
 app.use(function(err, req, res, next) {

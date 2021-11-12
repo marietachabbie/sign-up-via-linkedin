@@ -1,0 +1,52 @@
+.topnav
+  .logo
+    img(src='https://static.wixstatic.com/media/8f412b_f1af8d2a0be345fd8ce632a5d3ef6b3b~mv2.png/v1/fill/w_250,h_204,al_c,q_85,usm_0.66_1.00_0.01/8f412b_f1af8d2a0be345fd8ce632a5d3ef6b3b~mv2.webp')
+  .menu
+    a(href='/').active
+      h2 Home
+    a(href='/')
+      h2 Benefits
+    a(href='/')
+      h2 Pricing
+    a(href='/').join Join via
+      img(src='https://cdn-icons-png.flaticon.com/512/174/174857.png' style='height: 18px; float: right; margin-left: 6px; margin-top: 2px')
+
+style.
+  .topnav {
+    overflow: hidden;
+    background-color: transparent;
+    font-family: 'Mukta', sans-serif;
+  }
+  .topnav .logo {
+    float: left;
+  }
+  .topnav .logo img {
+    height: 92px;
+  }
+  .topnav .menu {
+    float: right;
+  }
+  .topnav a {
+    float: left;
+    color: #0C2E4E;
+    text-align: center;
+    padding: 8px 28px;
+    margin: 12px 8px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .topnav a.active {
+    color: #800080;
+  }
+  .topnav a.join {
+    border: 2px solid #85C1E9;
+    border-radius: 40px;
+    font-family: 'Alegreya', serif;
+    font-size: 18px;
+  }
+  .topnav a h2 {
+    margin: 0;
+  }
+  .topnav a:hover {
+    color: #800080;
+  }
