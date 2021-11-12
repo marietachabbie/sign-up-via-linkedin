@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .cover
+    .profile-pic
+      img(src=`${photo}` style='width: 140px; border-radius: 50%')
+    .personal-data
+      p#fullname= name + ' ' + family
+      p= email
+
+  style.
+    .cover {
+      width: 100%;
+      height: 250px;
+      padding: 0;
+      background-color: #0C2E4E;
+    }
+    .profile-pic {
+      display: inline;
+      margin: 100px 0 0 180px;
+      float: left;
+    }
+    .personal-data {
+      text-align: left;
+      padding: 160px 0 0 342px;
+      color: white;
+    }
+    #fullname {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 24px;
+      line-height: 0.8em;
+      margin: 0;
+    }
