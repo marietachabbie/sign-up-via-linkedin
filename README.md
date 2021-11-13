@@ -11,8 +11,6 @@ cd app && npm i && npm start
 
 # Demo (in preffered browser):
 
-```
 ```sh
 http://127.0.0.1:3000/
-```
 ```
