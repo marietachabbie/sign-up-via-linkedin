@@ -5,6 +5,7 @@ const logger = require('morgan');
 const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
 const indexRouter = require('./routes');
+require('dotenv').config();
 
 const passport = require("passport");
 const LinkedInStrategy = require("passport-linkedin-oauth2").Strategy;
@@ -42,8 +43,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/', indexRouter);
 
-const LINKEDIN_KEY = '';
-const LINKEDIN_SECRET = '';
+const LINKEDIN_KEY = process.env.LINKEDIN_KEY;
+const LINKEDIN_SECRET = process.env.LINKEDIN_SECRET;
+
 passport.use(
   new LinkedInStrategy(
     {
