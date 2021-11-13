@@ -1,6 +1,7 @@
 .topnav
   .logo
-    img(src='https://static.wixstatic.com/media/8f412b_f1af8d2a0be345fd8ce632a5d3ef6b3b~mv2.png/v1/fill/w_250,h_204,al_c,q_85,usm_0.66_1.00_0.01/8f412b_f1af8d2a0be345fd8ce632a5d3ef6b3b~mv2.webp')
+    a(href='/')
+      img(src='https://static.wixstatic.com/media/8f412b_f1af8d2a0be345fd8ce632a5d3ef6b3b~mv2.png/v1/fill/w_250,h_204,al_c,q_85,usm_0.66_1.00_0.01/8f412b_f1af8d2a0be345fd8ce632a5d3ef6b3b~mv2.webp')
   .menu
     a(href='/').active
       h2 Home
@@ -19,6 +20,10 @@ style.
   }
   .topnav .logo {
     float: left;
+  }
+  .topnav .logo a{
+    margin: 0;
+    padding: 0;
   }
   .topnav .logo img {
     height: 92px;
