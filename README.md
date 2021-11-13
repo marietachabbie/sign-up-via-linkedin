@@ -5,6 +5,6 @@ To run the app locally you will need your own LINKEDIN_KEY and LINKEDIN_SECRET.
 
 # Running:
 
-```
+```sh
 cd app && npm i && npm start
 ```
