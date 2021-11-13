@@ -31,3 +31,10 @@ block content
       line-height: 0.8em;
       margin: 0;
     }
+  
+  script.
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      let joinButton = document.getElementById('join');
+      joinButton.href = '/';
+      joinButton.innerHTML = 'Log Out';
+    });
