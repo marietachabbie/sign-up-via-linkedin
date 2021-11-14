@@ -1,16 +1,18 @@
-# Test application on Node.js for authentiaction via Linkedin
+# Test web application for authenticating via LinkedIn
 
-Simple test application implemented on `Node.js` (`Express`) to authenticate the user via their Linkedin account. The UI is done by an HTML precompiler such as `Pug`.
-To run the app locally you will need your own LINKEDIN_KEY and LINKEDIN_SECRET stored in app/.env.
+A simple test web application implemented using `Express` in `Node.js` to authenticate the users via their LinkedIn account. The UI is done using `Pug` HTML precompiler.
 
-# Running:
+## Running the backend
+
+Before running the app locally you will need to set your own `LINKEDIN_KEY` and `LINKEDIN_SECRET` variables in `app/.env` file.
+
+Then, execute this in console:
 
 ```sh
 cd app && npm i && npm start
 ```
 
-# Demo (in preffered browser):
+## Running the frontend
 
-```sh
-http://127.0.0.1:3000/
-```
+Open this URL in the preferred browser:
+[http://127.0.0.1:3000](http://127.0.0.1:3000)
