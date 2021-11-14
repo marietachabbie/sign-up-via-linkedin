@@ -7,6 +7,45 @@ block content
     .personal-data
       p#fullname= data.name + ' ' + data.family
       p= data.email
+  .profile
+    .myAccount
+      h1 My Account
+      .buttons
+        button.discard Discard
+        button.update Update Info
+      p View and edit your personal info below.
+      hr
+    .displayInfo
+      h2 Display Info
+      p Your profile card is visible to all members of this site.
+      br
+      p Display Name *
+      input(type="text", value=`${data.name} ${data.family}`)
+      hr
+    .account
+      h2 Account
+      p Update & Edit the information you share with the community.
+      br
+      p Login Email:
+      p= data.email
+      p#warning Your Login email can't be changed.
+      br
+      .personalData
+        .personalDataItem
+          p First Name
+          input(type="text", value=`${data.name}`)
+        .personalDataItem
+          p Last Name
+          input(type="text", value=`${data.family}`)
+        .personalDataItem
+          br
+          p Email
+          input(type="text", value=`${data.email}`)
+        .personalDataItem
+          br
+          p Phone
+          input(type="text")
+
 
   style.
     .cover {
@@ -17,7 +56,7 @@ block content
     }
     .profile-pic {
       display: inline;
-      margin: 100px 0 0 180px;
+      margin: 90px 0 0 180px;
       float: left;
     }
     .personal-data {
@@ -30,6 +69,73 @@ block content
       font-size: 24px;
       line-height: 0.8em;
       margin: 0;
+    }
+
+    .profile {
+      font-family: 'Mukta', sans-serif;
+      color: #364E65;
+      border: 1px solid;
+      border-style: groove;
+      margin: 60px 160px;
+      padding: 0 40px 40px 40px;
+    }
+    .profile .myAccount, .displayInfo, .account {
+      padding-top: 26px;
+    }
+    .profile .myAccount {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    .profile h1, h2 {
+      margin: 0;
+    }
+    .profile p {
+      margin: 0;
+      font-size: 16px;
+    }
+    .profile p#warning {
+      color: #6E7B89;
+    }
+    .profile .personalData {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    .profile input[type=text] {
+      width: 412px;
+      line-height: 42px;
+      padding: 0 14px;
+      margin-top: 12px;
+      font-family: 'Mukta', sans-serif;
+      color: #0C2E4E;
+      font-size: 18px;
+      border: 0.8px solid #364E65;
+    }
+    .profile hr {
+      margin-top: 24px;
+    }
+    .buttons .discard {
+      border: 1px solid grey;
+      width: 120px;
+      height: 38px;
+      background-color: transparent;
+      color: grey;
+      border-radius: 40px;
+      margin-right: 12px;
+      font-family: 'Mukta', sans-serif;
+      font-size: 18px;
+    }
+    .buttons .update {
+      border: 1px solid grey;
+      width: 120px;
+      height: 38px;
+      background-color: grey;
+      color: #F5F9FC;
+      border-radius: 40px;
+      font-family: 'Mukta', sans-serif;
+      font-size: 18px;
+    }
+    .buttons {
+      text-align: right;
     }
   
   script.
